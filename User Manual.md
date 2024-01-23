@@ -37,8 +37,47 @@ docker run -it -v "$(pwd):/mrfparse:rw" mrfparse pipeline -i https://mrf.healths
                                                           -p 99
 ```
 
+## detailed features
+- pipeline:Parse in-network MRF files. Input is a single MRF JSON file. Output is a parquet fileset.
 
+```bsah
+Usage:
+  mrfparse pipeline [flags]
 
+Flags:
+  -h, --help              help for pipeline
+  -i, --input string      Input path to JSON MRF file. Can be a local, HTTP, S3, or GCS path. Supports GZIPed files.
+  -o, --output string     Output path for parsed MRF fileset in parquet format
+  -p, --planid int        The planid acquired from the index file (default -1)
+  -s, --services string   Path to a CSV file containing a list of CPT/HCPCS service codes to filter on
+  ```
+- parse:Parse in-network MRF files. Expects split NDJSON files as input.
+
+```bsah
+Usage:
+  mrfparse parse [flags]
+  
+Flags:
+  -h, --help              help for parse
+  -i, --input string      input path to NDJSON files
+  -o, --output string     output path for parsed MRF files in parquet format
+  -p, --planid int        the planid acquired from the index file (default -1)
+  -s, --services string   path to a CSV file containing a list of CPT/HCPCS service codes to filter on
+  ```
+
+- split:Split JSON files.
+  
+```bsah
+Usage:
+  mrfparse split [flags]
+
+Flags:
+  -h, --help            help for split
+  -i, --input string    input path to JSON file.
+  -o, --output string   output path for split NDJSON files
+      --overwrite       overwrite contents of output path if it exists
+  ```
+  
 
 
 
