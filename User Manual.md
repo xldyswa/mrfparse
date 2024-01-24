@@ -1,6 +1,4 @@
 # How to use this project
-## Notes of caution
-- Make sure your go version is above 1.19  `go version`
 
 ##   Build and Usage
 Enter the main directory 
@@ -11,6 +9,11 @@ cd mrfparse
 Use the `Makefile` to build the binary or container. 
 
 - Build the binary
+
+ Notes of caution
+
+Make sure your go version is above 1.19  `go version`
+  
 ```bash
 make 
 ```
