@@ -36,7 +36,7 @@ Parse a gzipped MRF file hosted on a payer's website and output the parquet data
 ```bash
 docker run -it -v "$(pwd):/mrfparse:rw" mrfparse pipeline -i https://mrf.healthsparq.com/aetnacvs-egress.nophi.kyruushsq.com/prd/mrf/AETNACVS_I/AFEHBPFI/2024-01-05/inNetworkRates/2024-01-05_8e0af629-6cc4-4e56-a55e-11f5cb66e752_Aetna-Life-Insurance-Company.json.gz
                                                           -o /tmp/out
-                                                          -s data/tic_500_shoppable_services.csv
+                                                          -s /mrfparse/data/tic_500_shoppable_services.csv
                                                           -p 99
 ```
 
